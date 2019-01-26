@@ -2,15 +2,25 @@
 import * as ReactDOM from "react-dom";
 import { Header } from './Header';
 
-class HelloWorld extends React.Component{
+declare var mostrarHelloWorld : boolean;
+
+interface IHelloWorld {
+    show: boolean;
+}
+
+class HelloWorld extends React.Component<IHelloWorld, {}> {
+    constructor(props) {
+        super(props);
+    }
     render() {
         return (
-            <div>
-                <Header text="GROZO" />
-                <div>Hello world Mostro!</div>
-            </div>
+            this.props.show &&
+                <div>
+                    <Header text="GROZOs" />
+                    <div>Hello world Mostro!</div>
+                </div>
         );
     }
 }
 
-ReactDOM.render(<HelloWorld />, document.getElementById('aquireact'));
+ReactDOM.render(<HelloWorld show={mostrarHelloWorld} />, document.getElementById('aquireact'));

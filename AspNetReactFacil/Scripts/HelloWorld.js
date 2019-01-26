@@ -18,15 +18,16 @@ var ReactDOM = require("react-dom");
 var Header_1 = require("./Header");
 var HelloWorld = /** @class */ (function (_super) {
     __extends(HelloWorld, _super);
-    function HelloWorld() {
-        return _super !== null && _super.apply(this, arguments) || this;
+    function HelloWorld(props) {
+        return _super.call(this, props) || this;
     }
     HelloWorld.prototype.render = function () {
-        return (React.createElement("div", null,
-            React.createElement(Header_1.Header, { text: "GROZO" }),
-            React.createElement("div", null, "Hello world Mostro!")));
+        return (this.props.show &&
+            React.createElement("div", null,
+                React.createElement(Header_1.Header, { text: "GROZOs" }),
+                React.createElement("div", null, "Hello world Mostro!")));
     };
     return HelloWorld;
 }(React.Component));
-ReactDOM.render(React.createElement(HelloWorld, null), document.getElementById('aquireact'));
+ReactDOM.render(React.createElement(HelloWorld, { show: mostrarHelloWorld }), document.getElementById('aquireact'));
 //# sourceMappingURL=HelloWorld.js.map
