@@ -16,11 +16,11 @@ class HelloWorld extends React.Component<IHelloWorld, {}> {
         return (
             this.props.show &&
                 <div>
-                    <Header text="GROZOs" />
+                    <Header text="GROZO MANZ Ultra!" />
                     <div>Hello world Mostro!</div>
                 </div>
         );
     }
 }
 
-ReactDOM.render(<HelloWorld show={mostrarHelloWorld} />, document.getElementById('aquireact'));
+ReactDOM.render(<HelloWorld show={true} />, document.getElementById('aquireact'));

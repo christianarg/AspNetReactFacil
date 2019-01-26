@@ -1,10 +1,12 @@
-﻿module.exports = {
+﻿const path = require('path');
+
+module.exports = {
     entry: "./Scripts/HelloWorld.tsx",
     output: {
         filename: "bundle.js",
-        path: __dirname + "/dist"
+        path: path.resolve(__dirname, 'dist'),
     },
-    watch: true,
+    mode: 'production',
     // Enable sourcemaps for debugging webpack's output.
     devtool: "source-map",
 

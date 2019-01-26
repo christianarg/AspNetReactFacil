@@ -24,10 +24,10 @@ var HelloWorld = /** @class */ (function (_super) {
     HelloWorld.prototype.render = function () {
         return (this.props.show &&
             React.createElement("div", null,
-                React.createElement(Header_1.Header, { text: "GROZOs" }),
+                React.createElement(Header_1.Header, { text: "GROZO MANZ Ultra!" }),
                 React.createElement("div", null, "Hello world Mostro!")));
     };
     return HelloWorld;
 }(React.Component));
-ReactDOM.render(React.createElement(HelloWorld, { show: mostrarHelloWorld }), document.getElementById('aquireact'));
+ReactDOM.render(React.createElement(HelloWorld, { show: true }), document.getElementById('aquireact'));
 //# sourceMappingURL=HelloWorld.js.map
