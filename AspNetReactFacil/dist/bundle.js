@@ -81,15 +81,15 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./Scripts/HelloWorld.tsx");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./Scripts/HelloWorld/HelloWorld.tsx");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./Scripts/Header.tsx":
-/*!****************************!*\
-  !*** ./Scripts/Header.tsx ***!
-  \****************************/
+/***/ "./Scripts/HelloWorld/Header.tsx":
+/*!***************************************!*\
+  !*** ./Scripts/HelloWorld/Header.tsx ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -125,10 +125,10 @@ exports.Header = Header;
 
 /***/ }),
 
-/***/ "./Scripts/HelloWorld.tsx":
-/*!********************************!*\
-  !*** ./Scripts/HelloWorld.tsx ***!
-  \********************************/
+/***/ "./Scripts/HelloWorld/HelloWorld.tsx":
+/*!*******************************************!*\
+  !*** ./Scripts/HelloWorld/HelloWorld.tsx ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -150,7 +150,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "react");
 var ReactDOM = __webpack_require__(/*! react-dom */ "react-dom");
-var Header_1 = __webpack_require__(/*! ./Header */ "./Scripts/Header.tsx");
+var Header_1 = __webpack_require__(/*! ./Header */ "./Scripts/HelloWorld/Header.tsx");
 var HelloWorld = /** @class */ (function (_super) {
     __extends(HelloWorld, _super);
     function HelloWorld(props) {

@@ -146,6 +146,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="package.json" />
+    <Content Include="Scripts\ReactTutorial\index.css" />
+    <Content Include="Scripts\ReactTutorial\index.html" />
     <Content Include="webpack.config.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -192,9 +194,10 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Scripts\Header.tsx" />
-    <TypeScriptCompile Include="Scripts\HelloWorld.tsx" />
+    <TypeScriptCompile Include="Scripts\HelloWorld\Header.tsx" />
+    <TypeScriptCompile Include="Scripts\HelloWorld\HelloWorld.tsx" />
     <TypeScriptCompile Include="Scripts\MyCoso.ts" />
+    <TypeScriptCompile Include="Scripts\ReactTutorial\index.tsx" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
