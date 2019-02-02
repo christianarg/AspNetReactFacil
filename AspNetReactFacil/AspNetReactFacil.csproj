@@ -146,6 +146,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="package.json" />
+    <Content Include="Scripts\react-dom.production.min.js" />
+    <Content Include="Scripts\react.production.min.js" />
     <Content Include="Scripts\ReactTutorial\index.css" />
     <Content Include="Scripts\ReactTutorial\index.html" />
     <Content Include="webpack.config.js" />

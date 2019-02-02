@@ -15,6 +15,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var ReactDOM = require("react-dom");
+alert('pt');
 function Square(props) {
     return (React.createElement("button", { className: "square", onClick: props.onClick }, props.value));
 }
@@ -54,34 +55,40 @@ var Game = /** @class */ (function (_super) {
         };
         _this.state = {
             history: [initialState],
-            xIsNext: true
+            xIsNext: true,
+            stepNumber: 0
         };
         return _this;
     }
     Game.prototype.handleClick = function (i) {
-        var history = this.state.history;
-        var current = this.current();
+        var history = this.state.history.slice(0, this.state.stepNumber + 1);
+        var current = history[history.length - 1];
         var squares = current.squares.slice();
         if (calculateWinner(squares) || squares[i]) {
             return;
         }
-        squares[i] = this.getNextSymbol();
+        squares[i] = this.state.xIsNext ? 'X' : 'O';
         this.setState({
-            history: history.concat([{ squares: squares }]),
-            xIsNext: !this.state.xIsNext
+            history: history.concat([{
+                    squares: squares
+                }]),
+            stepNumber: history.length,
+            xIsNext: !this.state.xIsNext,
         });
-    };
-    Game.prototype.current = function () {
-        var history = this.state.history;
-        var current = history[history.length - 1];
-        return current;
     };
     Game.prototype.getNextSymbol = function () {
         return this.state.xIsNext ? 'X' : 'O';
     };
+    Game.prototype.jumpTo = function (step) {
+        this.setState({
+            stepNumber: step,
+            xIsNext: (step % 2) === 0,
+        });
+    };
     Game.prototype.render = function () {
         var _this = this;
-        var current = this.current();
+        var history = this.state.history;
+        var current = history[this.state.stepNumber];
         var winner = calculateWinner(current.squares);
         var status;
         if (winner) {
@@ -90,12 +97,19 @@ var Game = /** @class */ (function (_super) {
         else {
             status = 'Next player: ' + this.getNextSymbol();
         }
+        var moves = history.map(function (step, move) {
+            var desc = move ?
+                'Go to move #' + move :
+                'Go to game start';
+            return (React.createElement("li", { key: move },
+                React.createElement("button", { onClick: function () { return _this.jumpTo(move); } }, desc)));
+        });
         return (React.createElement("div", { className: "game" },
             React.createElement("div", { className: "game-board" },
                 React.createElement(Board, { squares: current.squares, onClick: function (i) { return _this.handleClick(i); } })),
             React.createElement("div", { className: "game-info" },
                 React.createElement("div", null, status),
-                React.createElement("ol", null))));
+                React.createElement("ol", null, moves))));
     };
     return Game;
 }(React.Component));
