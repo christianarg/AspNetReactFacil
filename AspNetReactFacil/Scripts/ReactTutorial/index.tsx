@@ -1,35 +1,24 @@
 ﻿import * as React from "react";
 import * as ReactDOM from "react-dom";
+import { func } from "prop-types";
 //import './index.css';
 
 interface ISquareProps {
     value: string;
-    onClick?: Function;
+    onClick?: React.MouseEventHandler<any>
 }
 
-interface ISquareState {
-    value: string;
+function Square(props: ISquareProps) {
+    return (
+        <button className="square" onClick={props.onClick}>
+            {props.value}
+        </button>
+    );
 }
 
-class Square extends React.Component<ISquareProps, ISquareState> {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: null
-        }
-    }
-
-    render() {
-        return (
-            <button className="square" onClick={() => this.setState({ value: 'X' })}>
-                {this.state.value}
-            </button >
-        );
-    }
-}
 
 interface IBoardState {
-    squares: [];
+    squares: string[];
 }
 
 class Board extends React.Component<{}, IBoardState> {
@@ -45,7 +34,10 @@ class Board extends React.Component<{}, IBoardState> {
     }
 
     handleClick(i) {
-        alert(i);
+        const squares = this.state.squares.slice();
+
+        squares[i] = 'X';
+        this.setState({ squares: squares });
     }
 
     renderSquare(i) {

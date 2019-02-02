@@ -111,21 +111,9 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "react");
 var ReactDOM = __webpack_require__(/*! react-dom */ "react-dom");
-var Square = /** @class */ (function (_super) {
-    __extends(Square, _super);
-    function Square(props) {
-        var _this = _super.call(this, props) || this;
-        _this.state = {
-            value: null
-        };
-        return _this;
-    }
-    Square.prototype.render = function () {
-        var _this = this;
-        return (React.createElement("button", { className: "square", onClick: function () { return _this.setState({ value: 'X' }); } }, this.state.value));
-    };
-    return Square;
-}(React.Component));
+function Square(props) {
+    return (React.createElement("button", { className: "square", onClick: props.onClick }, props.value));
+}
 var Board = /** @class */ (function (_super) {
     __extends(Board, _super);
     function Board(props) {
@@ -137,7 +125,9 @@ var Board = /** @class */ (function (_super) {
         return _this;
     }
     Board.prototype.handleClick = function (i) {
-        alert(i);
+        var squares = this.state.squares.slice();
+        squares[i] = 'X';
+        this.setState({ squares: squares });
     };
     Board.prototype.renderSquare = function (i) {
         var _this = this;
