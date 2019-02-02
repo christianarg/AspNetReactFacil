@@ -116,44 +116,15 @@ function Square(props) {
 }
 var Board = /** @class */ (function (_super) {
     __extends(Board, _super);
-    function Board(props) {
-        var _this = _super.call(this, props) || this;
-        var array = Array(9);
-        _this.state = {
-            squares: array.fill(null),
-            xIsNext: true
-        };
-        return _this;
+    function Board() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-    Board.prototype.handleClick = function (i) {
-        var squares = this.state.squares.slice();
-        if (calculateWinner(squares) || squares[i]) {
-            return;
-        }
-        squares[i] = this.getNextSymbol();
-        this.setState({
-            squares: squares,
-            xIsNext: !this.state.xIsNext
-        });
-    };
     Board.prototype.renderSquare = function (i) {
         var _this = this;
-        return React.createElement(Square, { value: this.state.squares[i], onClick: function () { return _this.handleClick(i); } });
-    };
-    Board.prototype.getNextSymbol = function () {
-        return this.state.xIsNext ? 'X' : 'O';
+        return React.createElement(Square, { value: this.props.squares[i], onClick: function () { return _this.props.onClick(i); } });
     };
     Board.prototype.render = function () {
-        var winner = calculateWinner(this.state.squares);
-        var status;
-        if (winner) {
-            status = 'Winner: ' + winner;
-        }
-        else {
-            status = 'Next player: ' + this.getNextSymbol();
-        }
         return (React.createElement("div", null,
-            React.createElement("div", { className: "status" }, status),
             React.createElement("div", { className: "board-row" },
                 this.renderSquare(0),
                 this.renderSquare(1),
@@ -171,15 +142,55 @@ var Board = /** @class */ (function (_super) {
 }(React.Component));
 var Game = /** @class */ (function (_super) {
     __extends(Game, _super);
-    function Game() {
-        return _super !== null && _super.apply(this, arguments) || this;
+    function Game(props) {
+        var _this = _super.call(this, props) || this;
+        var array = Array(9);
+        var initialState = {
+            squares: array.fill(null),
+        };
+        _this.state = {
+            history: [initialState],
+            xIsNext: true
+        };
+        return _this;
     }
+    Game.prototype.handleClick = function (i) {
+        var history = this.state.history;
+        var current = this.current();
+        var squares = current.squares.slice();
+        if (calculateWinner(squares) || squares[i]) {
+            return;
+        }
+        squares[i] = this.getNextSymbol();
+        this.setState({
+            history: history.concat([{ squares: squares }]),
+            xIsNext: !this.state.xIsNext
+        });
+    };
+    Game.prototype.current = function () {
+        var history = this.state.history;
+        var current = history[history.length - 1];
+        return current;
+    };
+    Game.prototype.getNextSymbol = function () {
+        return this.state.xIsNext ? 'X' : 'O';
+    };
     Game.prototype.render = function () {
+        var _this = this;
+        var current = this.current();
+        var winner = calculateWinner(current.squares);
+        var status;
+        if (winner) {
+            status = 'Winner: ' + winner;
+        }
+        else {
+            status = 'Next player: ' + this.getNextSymbol();
+        }
         return (React.createElement("div", { className: "game" },
             React.createElement("div", { className: "game-board" },
-                React.createElement(Board, null)),
+                React.createElement(Board, { squares: current.squares, onClick: function (i) { return _this.handleClick(i); } })),
             React.createElement("div", { className: "game-info" },
-                React.createElement("div", null),
+                React.createElement("div", null, status),
                 React.createElement("ol", null))));
     };
     return Game;
