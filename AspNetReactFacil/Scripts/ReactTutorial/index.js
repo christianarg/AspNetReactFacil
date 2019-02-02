@@ -15,6 +15,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var ReactDOM = require("react-dom");
+//import './index.css';
 var Square = /** @class */ (function (_super) {
     __extends(Square, _super);
     function Square() {

@@ -13,6 +13,11 @@ namespace AspNetReactFacil.Controllers
             return View();
         }
 
+        public ActionResult ReactTutorial()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

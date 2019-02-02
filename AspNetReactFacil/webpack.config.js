@@ -1,9 +1,13 @@
 ﻿const path = require('path');
 
 module.exports = {
-    entry: "./Scripts/HelloWorld/HelloWorld.tsx",
+    //entry: "./Scripts/HelloWorld/HelloWorld.tsx",
+    entry: {
+        helloWorld: "./Scripts/HelloWorld/HelloWorld.tsx",
+        reactTutorial: "./Scripts/ReactTutorial/index.tsx",
+    },
     output: {
-        filename: "bundle.js",
+        filename: "bundle.[name].js",
         path: path.resolve(__dirname, 'dist'),
     },
     mode: 'production',
