@@ -24,21 +24,28 @@ var Board = /** @class */ (function (_super) {
         var _this = _super.call(this, props) || this;
         var array = Array(9);
         _this.state = {
-            squares: array.fill(null)
+            squares: array.fill(null),
+            xIsNext: true
         };
         return _this;
     }
     Board.prototype.handleClick = function (i) {
         var squares = this.state.squares.slice();
-        squares[i] = 'X';
-        this.setState({ squares: squares });
+        squares[i] = this.getNextSymbol();
+        this.setState({
+            squares: squares,
+            xIsNext: !this.state.xIsNext
+        });
     };
     Board.prototype.renderSquare = function (i) {
         var _this = this;
         return React.createElement(Square, { value: this.state.squares[i], onClick: function () { return _this.handleClick(i); } });
     };
+    Board.prototype.getNextSymbol = function () {
+        return this.state.xIsNext ? 'X' : 'O';
+    };
     Board.prototype.render = function () {
-        var status = 'Next player: X';
+        var status = "Next player: " + this.getNextSymbol();
         return (React.createElement("div", null,
             React.createElement("div", { className: "status" }, status),
             React.createElement("div", { className: "board-row" },
