@@ -2,19 +2,54 @@
 import * as ReactDOM from "react-dom";
 //import './index.css';
 
-class Square extends React.Component {
+interface ISquareProps {
+    value: string;
+    onClick?: Function;
+}
+
+interface ISquareState {
+    value: string;
+}
+
+class Square extends React.Component<ISquareProps, ISquareState> {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: null
+        }
+    }
+
     render() {
         return (
-            <button className="square">
-                {/* TODO */}
-            </button>
+            <button className="square" onClick={() => this.setState({ value: 'X' })}>
+                {this.state.value}
+            </button >
         );
     }
 }
 
-class Board extends React.Component {
+interface IBoardState {
+    squares: [];
+}
+
+class Board extends React.Component<{}, IBoardState> {
+
+    constructor(props) {
+        super(props);
+
+        const array: any = Array(9);
+
+        this.state = {
+            squares: array.fill(null)
+        }
+    }
+
+    handleClick(i) {
+        alert(i);
+    }
+
     renderSquare(i) {
-        return <Square />;
+        return <Square value={this.state.squares[i]} onClick={() => this.handleClick(i)} />;
     }
 
     render() {

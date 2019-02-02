@@ -111,24 +111,37 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "react");
 var ReactDOM = __webpack_require__(/*! react-dom */ "react-dom");
-//import './index.css';
 var Square = /** @class */ (function (_super) {
     __extends(Square, _super);
-    function Square() {
-        return _super !== null && _super.apply(this, arguments) || this;
+    function Square(props) {
+        var _this = _super.call(this, props) || this;
+        _this.state = {
+            value: null
+        };
+        return _this;
     }
     Square.prototype.render = function () {
-        return (React.createElement("button", { className: "square" }));
+        var _this = this;
+        return (React.createElement("button", { className: "square", onClick: function () { return _this.setState({ value: 'X' }); } }, this.state.value));
     };
     return Square;
 }(React.Component));
 var Board = /** @class */ (function (_super) {
     __extends(Board, _super);
-    function Board() {
-        return _super !== null && _super.apply(this, arguments) || this;
+    function Board(props) {
+        var _this = _super.call(this, props) || this;
+        var array = Array(9);
+        _this.state = {
+            squares: array.fill(null)
+        };
+        return _this;
     }
+    Board.prototype.handleClick = function (i) {
+        alert(i);
+    };
     Board.prototype.renderSquare = function (i) {
-        return React.createElement(Square, null);
+        var _this = this;
+        return React.createElement(Square, { value: this.state.squares[i], onClick: function () { return _this.handleClick(i); } });
     };
     Board.prototype.render = function () {
         var status = 'Next player: X';
