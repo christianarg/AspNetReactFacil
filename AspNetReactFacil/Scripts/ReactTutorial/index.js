@@ -15,7 +15,6 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var ReactDOM = require("react-dom");
-alert('pt');
 function Square(props) {
     return (React.createElement("button", { className: "square", onClick: props.onClick }, props.value));
 }

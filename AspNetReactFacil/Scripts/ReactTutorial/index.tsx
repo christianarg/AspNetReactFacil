@@ -2,7 +2,7 @@
 import * as ReactDOM from "react-dom";
 import { func } from "prop-types";
 
-alert('pt');
+//alert('pt');
 //import './index.css';
 
 interface ISquareProps {

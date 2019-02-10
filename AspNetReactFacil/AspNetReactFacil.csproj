@@ -199,6 +199,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\HelloWorld\Header.tsx" />
     <TypeScriptCompile Include="Scripts\HelloWorld\HelloWorld.tsx" />
+    <TypeScriptCompile Include="Scripts\HelloWorld\utils.ts" />
     <TypeScriptCompile Include="Scripts\MyCoso.ts" />
     <TypeScriptCompile Include="Scripts\ReactTutorial\index.tsx" />
   </ItemGroup>

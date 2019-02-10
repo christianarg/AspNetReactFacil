@@ -6,6 +6,8 @@ using System.Web.Mvc;
 
 namespace AspNetReactFacil.Controllers
 {
+ 
+    
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -18,18 +20,18 @@ namespace AspNetReactFacil.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult SomeData()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            return Json(new List<SomeData>
+            {
+                new SomeData {Text="SomeData1" },
+                new SomeData { Text = "SomeData2" }
+            }, JsonRequestBehavior.AllowGet);
         }
+    }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+    public class SomeData
+    {
+        public string Text { get; set; }
     }
 }

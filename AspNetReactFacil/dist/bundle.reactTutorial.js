@@ -111,7 +111,6 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "react");
 var ReactDOM = __webpack_require__(/*! react-dom */ "react-dom");
-alert('pt');
 function Square(props) {
     return (React.createElement("button", { className: "square", onClick: props.onClick }, props.value));
 }
