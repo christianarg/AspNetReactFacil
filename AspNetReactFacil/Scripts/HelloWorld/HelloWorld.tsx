@@ -3,8 +3,6 @@ import * as ReactDOM from "react-dom";
 import { Header } from './Header';
 import * as Ajax from './utils';
 
-declare var mostrarHelloWorld: boolean;
-
 interface ISomeData {
     Text: string;
 }
@@ -53,6 +51,18 @@ interface IHelloWorldState {
     selectedValue: string;
 }
 
+interface IGetSomeData {
+    getSomeData(): Promise<ISomeData>;
+}
+
+//const withGetSomeData = <P extends object>(Component: React.ComponentType<P>) => {
+//    return class extends React.Component {
+//        getSomeData(): Promise<ISomeData> {
+//            return Ajax.ajax({ url: '/Home/SomeData' });
+//        }
+//    }
+//}
+
 class HelloWorld extends React.Component<IHelloWorldProps, IHelloWorldState> {
     constructor(props) {
         super(props);
@@ -66,12 +76,15 @@ class HelloWorld extends React.Component<IHelloWorldProps, IHelloWorldState> {
         this.setState({ selectedValue: value });
     }
 
-    componentDidMount() {
-        Ajax.ajax({ url: '/Home/SomeData' }).then((result: ISomeData[]) => {
-            this.setState({ result: result });
-        });
+    async componentDidMount() {
+        const result = await this.getSomeData();
+        this.setState({ result: result });
     }
-    
+
+    getSomeData(): Promise<ISomeData[]> {
+        return Ajax.ajax({ url: '/Home/SomeData' });
+    }
+
     render() {
         const selectedValue = this.state.selectedValue && <h2>SelectedValue: {this.state.selectedValue}</h2>
         return (
@@ -79,11 +92,13 @@ class HelloWorld extends React.Component<IHelloWorldProps, IHelloWorldState> {
             <div>
                 <Header text="GROZO MANZ UltraZ!" />
                 <div>Hello world Mostro!</div>
-                <UnorderedList result={this.state.result} onClick={this.handleClick.bind(this)} />
+                <UnorderedList result={this.state.result} onClick={this.handleClick} />
                 {selectedValue}
             </div>
         );
     }
 }
 
+//const HelloWorldWithGetSomeData = withGetSomeData(HelloWorld);
+//HelloWorldWithGetSomeData
 ReactDOM.render(<HelloWorld show={true} />, document.getElementById('aquireact'));
