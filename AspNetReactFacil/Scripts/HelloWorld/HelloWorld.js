@@ -17,10 +17,15 @@ var React = require("react");
 var ReactDOM = require("react-dom");
 var Header_1 = require("./Header");
 var Ajax = require("./utils");
+function ListItem(props) {
+    //return (<li>hola</li>);
+    var someData = props.someData;
+    return (React.createElement("li", { key: someData.Text, style: { cursor: 'pointer' }, onClick: function () { return props.onClick(someData.Text); } }, someData.Text));
+}
 function UnorderedList(props) {
     if (props.result) {
-        return (React.createElement("ul", null, props.result.map(function (value) {
-            return React.createElement("li", { key: value.Text, style: { cursor: 'pointer' }, onClick: function () { return props.onClick(value.Text); } }, value.Text);
+        return (React.createElement("ul", null, props.result.map(function (someData) {
+            return React.createElement(ListItem, { someData: someData, onClick: props.onClick });
         })));
     }
     return null;

@@ -9,19 +9,35 @@ interface ISomeData {
     Text: string;
 }
 
+type ClickHandler = (value: string) => void;
+
+interface IListItemProps {
+    someData: ISomeData;
+    onClick: ClickHandler;
+}
+
+function ListItem(props: IListItemProps) {
+    //return (<li>hola</li>);
+    const someData = props.someData;
+    return (<li key={someData.Text}
+        style={{ cursor: 'pointer' }}
+        onClick={() => props.onClick(someData.Text)}>{someData.Text}</li>
+    );
+}
+
+
 interface IUnorderedListProps {
     result: ISomeData[];
-    onClick: (value: string) => void;
+    onClick: ClickHandler;
 }
 
 function UnorderedList(props: IUnorderedListProps) {
     if (props.result) {
         return (
             <ul>
-                {props.result.map(value =>
-                    <li key={value.Text}
-                        style={{ cursor: 'pointer' }}
-                        onClick={() => props.onClick(value.Text)}>{value.Text}</li>)}
+                {props.result.map(someData =>
+                    <ListItem someData={someData} onClick={props.onClick} />)
+                }
             </ul>
         );
     }
