@@ -3,7 +3,8 @@
 module.exports = {
     //entry: "./Scripts/HelloWorld/HelloWorld.tsx",
     entry: {
-        helloWorld: "./Scripts/HelloWorld/HelloWorld.tsx",
+        helloWorld: "./Scripts/HelloWorld/HelloWorldApp.tsx",
+        helloWorldSpec: "./Scripts/Tests/Helloworld.spec.tsx",
         reactTutorial: "./Scripts/ReactTutorial/index.tsx",
     },
     output: {

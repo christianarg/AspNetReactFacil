@@ -150,6 +150,12 @@
     <Content Include="Scripts\react.production.min.js" />
     <Content Include="Scripts\ReactTutorial\index.css" />
     <Content Include="Scripts\ReactTutorial\index.html" />
+    <Content Include="Scripts\Tests\lib\jasmine-3.3.0\boot.js" />
+    <Content Include="Scripts\Tests\lib\jasmine-3.3.0\jasmine-html.js" />
+    <Content Include="Scripts\Tests\lib\jasmine-3.3.0\jasmine.css" />
+    <Content Include="Scripts\Tests\lib\jasmine-3.3.0\jasmine.js" />
+    <Content Include="Scripts\Tests\lib\jasmine-3.3.0\jasmine_favicon.png" />
+    <Content Include="Scripts\Tests\SpecRunner.html" />
     <Content Include="webpack.config.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -199,9 +205,12 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\HelloWorld\Header.tsx" />
     <TypeScriptCompile Include="Scripts\HelloWorld\HelloWorld.tsx" />
+    <TypeScriptCompile Include="Scripts\HelloWorld\HelloWorldApp.tsx" />
     <TypeScriptCompile Include="Scripts\HelloWorld\utils.ts" />
     <TypeScriptCompile Include="Scripts\MyCoso.ts" />
     <TypeScriptCompile Include="Scripts\ReactTutorial\index.tsx" />
+    <TypeScriptCompile Include="Scripts\Tests\Helloworld.spec.tsx" />
+    <TypeScriptCompile Include="Scripts\Tests\Sample.spec.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

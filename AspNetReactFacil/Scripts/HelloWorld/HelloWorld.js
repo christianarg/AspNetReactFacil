@@ -49,7 +49,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-var ReactDOM = require("react-dom");
 var Header_1 = require("./Header");
 var Ajax = require("./utils");
 function ListItem(props) {
@@ -115,7 +114,8 @@ var HelloWorld = /** @class */ (function (_super) {
     };
     return HelloWorld;
 }(React.Component));
+exports.HelloWorld = HelloWorld;
 //const HelloWorldWithGetSomeData = withGetSomeData(HelloWorld);
 //HelloWorldWithGetSomeData
-ReactDOM.render(React.createElement(HelloWorld, { show: true }), document.getElementById('aquireact'));
+//ReactDOM.render(<HelloWorld show={true} />, document.getElementById('aquireact'));
 //# sourceMappingURL=HelloWorld.js.map

@@ -1,5 +1,4 @@
 ﻿import * as React from "react";
-import * as ReactDOM from "react-dom";
 import { Header } from './Header';
 import * as Ajax from './utils';
 
@@ -64,7 +63,7 @@ interface IGetSomeData {
 //}
 
 class HelloWorld extends React.Component<IHelloWorldProps, IHelloWorldState> {
-    constructor(props) {
+    constructor(props: IHelloWorldProps) {
         super(props);
         this.state = {
             result: null,
@@ -99,6 +98,7 @@ class HelloWorld extends React.Component<IHelloWorldProps, IHelloWorldState> {
     }
 }
 
+export { HelloWorld };
 //const HelloWorldWithGetSomeData = withGetSomeData(HelloWorld);
 //HelloWorldWithGetSomeData
-ReactDOM.render(<HelloWorld show={true} />, document.getElementById('aquireact'));
+//ReactDOM.render(<HelloWorld show={true} />, document.getElementById('aquireact'));

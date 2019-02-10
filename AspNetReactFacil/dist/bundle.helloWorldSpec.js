@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./Scripts/HelloWorld/HelloWorldApp.tsx");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./Scripts/Tests/Helloworld.spec.tsx");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -257,24 +257,6 @@ exports.HelloWorld = HelloWorld;
 
 /***/ }),
 
-/***/ "./Scripts/HelloWorld/HelloWorldApp.tsx":
-/*!**********************************************!*\
-  !*** ./Scripts/HelloWorld/HelloWorldApp.tsx ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(/*! react */ "react");
-var ReactDOM = __webpack_require__(/*! react-dom */ "react-dom");
-var HelloWorld_1 = __webpack_require__(/*! ./HelloWorld */ "./Scripts/HelloWorld/HelloWorld.tsx");
-ReactDOM.render(React.createElement(HelloWorld_1.HelloWorld, { show: true }), document.getElementById('aquireact'));
-
-
-/***/ }),
-
 /***/ "./Scripts/HelloWorld/utils.ts":
 /*!*************************************!*\
   !*** ./Scripts/HelloWorld/utils.ts ***!
@@ -318,6 +300,29 @@ exports.ajax = ajax;
 
 /***/ }),
 
+/***/ "./Scripts/Tests/Helloworld.spec.tsx":
+/*!*******************************************!*\
+  !*** ./Scripts/Tests/Helloworld.spec.tsx ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var HelloWorld = __webpack_require__(/*! ../HelloWorld/HelloWorld */ "./Scripts/HelloWorld/HelloWorld.tsx");
+it('Should not petar', function () {
+    // ARRANGE
+    var hello = new HelloWorld.HelloWorld({ show: true });
+    // ACT
+    var render = hello.render();
+    // ASSERT
+    expect(hello).toBeDefined();
+});
+
+
+/***/ }),
+
 /***/ "react":
 /*!************************!*\
   !*** external "React" ***!
@@ -327,18 +332,7 @@ exports.ajax = ajax;
 
 module.exports = React;
 
-/***/ }),
-
-/***/ "react-dom":
-/*!***************************!*\
-  !*** external "ReactDOM" ***!
-  \***************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ReactDOM;
-
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.helloWorld.js.map
+//# sourceMappingURL=bundle.helloWorldSpec.js.map
