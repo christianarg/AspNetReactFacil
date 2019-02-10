@@ -143,6 +143,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="jest.config.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="package.json" />
@@ -207,6 +208,7 @@
     <TypeScriptCompile Include="Scripts\HelloWorld\HelloWorld.tsx" />
     <TypeScriptCompile Include="Scripts\HelloWorld\HelloWorldApp.tsx" />
     <TypeScriptCompile Include="Scripts\HelloWorld\utils.ts" />
+    <TypeScriptCompile Include="Scripts\JestTests\HelloWorld.test.tsx" />
     <TypeScriptCompile Include="Scripts\MyCoso.ts" />
     <TypeScriptCompile Include="Scripts\ReactTutorial\index.tsx" />
     <TypeScriptCompile Include="Scripts\Tests\Helloworld.spec.tsx" />
