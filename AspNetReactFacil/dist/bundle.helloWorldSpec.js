@@ -243,7 +243,7 @@ var HelloWorld = /** @class */ (function (_super) {
         return (this.props.show &&
             React.createElement("div", null,
                 React.createElement(Header_1.Header, { text: "GROZO MANZ UltraZ!" }),
-                React.createElement("div", null, "Hello world Mostro!"),
+                React.createElement("h2", null, "Hello world Mostro!"),
                 React.createElement(UnorderedList, { result: this.state.result, onClick: this.handleClick }),
                 selectedValue));
     };

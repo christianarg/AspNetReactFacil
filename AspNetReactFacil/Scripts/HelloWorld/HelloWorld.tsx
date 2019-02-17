@@ -90,7 +90,7 @@ class HelloWorld extends React.Component<IHelloWorldProps, IHelloWorldState> {
             this.props.show &&
             <div>
                 <Header text="GROZO MANZ UltraZ!" />
-                <div>Hello world Mostro!</div>
+                <h2>Hello world Mostro!</h2>
                 <UnorderedList result={this.state.result} onClick={this.handleClick} />
                 {selectedValue}
             </div>
