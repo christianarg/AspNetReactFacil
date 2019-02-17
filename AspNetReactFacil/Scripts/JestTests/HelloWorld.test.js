@@ -1,17 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Enzyme = require("enzyme");
-var Adapter = require("enzyme-adapter-react-16");
-Enzyme.configure({ adapter: new Adapter() });
 var React = require("react");
 var enzyme_1 = require("enzyme");
 var HelloWorld_1 = require("../HelloWorld/HelloWorld");
 it("Should work", function () {
     expect(true).toBe(true);
 });
-it('ShouldCoso', function () {
-    debugger;
+it('Should have an h2 with concrete text', function () {
     var helloWorld = enzyme_1.shallow(React.createElement(HelloWorld_1.HelloWorld, { show: true }));
     expect(helloWorld.find('h2').text()).toEqual('Hello world Mostro!');
+});
+it('Should not show When show=false', function () {
+    var helloWorld = enzyme_1.shallow(React.createElement(HelloWorld_1.HelloWorld, { show: false }));
+    expect(helloWorld.html()).toBeNull();
 });
 //# sourceMappingURL=HelloWorld.test.js.map

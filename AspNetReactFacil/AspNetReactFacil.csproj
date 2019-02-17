@@ -215,6 +215,7 @@
     <TypeScriptCompile Include="Scripts\ReactTutorial\index.tsx" />
     <TypeScriptCompile Include="Scripts\Tests\Helloworld.spec.tsx" />
     <TypeScriptCompile Include="Scripts\Tests\Sample.spec.ts" />
+    <TypeScriptCompile Include="setupTests.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
