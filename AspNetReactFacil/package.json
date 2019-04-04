@@ -7,7 +7,7 @@
     "build": "webpack",
     "start": "webpack --watch --mode=development",
     "start:dev": "webpack-dev-server",
-    "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand"
+    "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watchAll"
   },
   "author": "",
   "license": "ISC",
