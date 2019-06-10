@@ -216,7 +216,7 @@
     <TypeScriptCompile Include="Scripts\ReactTutorial\index.tsx" />
     <TypeScriptCompile Include="Scripts\Tests\Helloworld.spec.tsx" />
     <TypeScriptCompile Include="Scripts\Tests\Sample.spec.ts" />
-    <TypeScriptCompile Include="Scripts\ThinkingInReact\index.tsx" />
+    <TypeScriptCompile Include="Scripts\ThinkingInReact\index-step2.tsx" />
     <TypeScriptCompile Include="setupTests.ts" />
   </ItemGroup>
   <ItemGroup>
