@@ -1,6 +1,5 @@
 ﻿import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { func } from "prop-types";
 
 //alert('pt');
 //import './index.css';

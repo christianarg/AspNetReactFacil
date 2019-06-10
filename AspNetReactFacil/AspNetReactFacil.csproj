@@ -186,6 +186,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="tsconfig.json" />
     <Content Include="Views\Home\ReactTutorial.cshtml" />
+    <Content Include="Views\Home\ThinkingInReact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -215,6 +216,7 @@
     <TypeScriptCompile Include="Scripts\ReactTutorial\index.tsx" />
     <TypeScriptCompile Include="Scripts\Tests\Helloworld.spec.tsx" />
     <TypeScriptCompile Include="Scripts\Tests\Sample.spec.ts" />
+    <TypeScriptCompile Include="Scripts\ThinkingInReact\index.tsx" />
     <TypeScriptCompile Include="setupTests.ts" />
   </ItemGroup>
   <ItemGroup>
