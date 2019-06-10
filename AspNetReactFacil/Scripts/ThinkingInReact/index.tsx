@@ -90,8 +90,8 @@ class SearchBar extends React.Component {
     }
 }
 
-
-class FilterableProductTable extends React.Component<{ products: Product[] }> {
+type FilterableProductTableProps = { products: Product[] };
+class FilterableProductTable extends React.Component<FilterableProductTableProps> {
     render() {
         return (
             <div>
