@@ -20,6 +20,11 @@ namespace AspNetReactFacil.Controllers
             return View();
         }
 
+        public ActionResult ThinkingInReact()
+        {
+            return View();
+        }
+
         public ActionResult SomeData()
         {
             return Json(new List<SomeData>

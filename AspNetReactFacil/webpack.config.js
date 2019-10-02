@@ -6,6 +6,7 @@ module.exports = {
         helloWorld: "./Scripts/HelloWorld/HelloWorldApp.tsx",
         helloWorldSpec: "./Scripts/Tests/Helloworld.spec.tsx",
         reactTutorial: "./Scripts/ReactTutorial/index.tsx",
+        thinkingInReact: "./Scripts/ThinkingInReact/index-step2.tsx",
     },
     output: {
         filename: "bundle.[name].js",
