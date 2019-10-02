@@ -1,6 +1,8 @@
 ﻿import * as React from "react";
 import * as ReactDOM from "react-dom";
+import { sharedFunction } from "../shared/sharedmodule";
 
+sharedFunction();
 //alert('pt');
 //import './index.css';
 

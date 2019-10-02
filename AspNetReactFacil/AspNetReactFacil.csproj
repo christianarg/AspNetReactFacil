@@ -214,6 +214,7 @@
     <TypeScriptCompile Include="Scripts\MyCoso.ts" />
     <TypeScriptCompile Include="Scripts\ReactDocs\index.tsx" />
     <TypeScriptCompile Include="Scripts\ReactTutorial\index.tsx" />
+    <TypeScriptCompile Include="Scripts\Shared\SharedModule.tsx" />
     <TypeScriptCompile Include="Scripts\Tests\Helloworld.spec.tsx" />
     <TypeScriptCompile Include="Scripts\Tests\Sample.spec.ts" />
     <TypeScriptCompile Include="Scripts\ThinkingInReact\index-step2.tsx" />
